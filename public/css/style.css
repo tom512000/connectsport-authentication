@@ -1,0 +1,40 @@
+html {
+    height: 100%;
+    background-color: #000;
+    display: flex;
+}
+body {
+    flex: 1;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: #666;
+    color: #ddd;
+}
+.header {
+}
+.header__title {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    padding: .5em 1em;
+}
+.footer {
+}
+.content {
+    flex: 1;
+    overflow-y: auto;
+    background-color: #333;
+    border-radius: 3px;
+    margin: 0 3px;
+    padding: .5em;
+}
+.country-selector {
+    display: flex;
+    gap: 0.5em;
+}
+
+a:link, a:visited, a:active {
+    color: white;
+}

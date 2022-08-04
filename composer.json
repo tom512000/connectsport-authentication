@@ -1,0 +1,54 @@
+{
+    "name": "cutron01/authentication",
+    "description": "Manage users and authentication",
+    "type": "project",
+    "license": "Copyleft",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jérôme Cutrona",
+            "email": "jerome.cutrona@univ-reims.fr"
+        }
+    ],
+    "require": {
+        "ext-intl": "*",
+        "ext-pdo": "*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3"
+    },
+    "scripts": {
+        "start:linux" : [
+            "Composer\\Config::disableProcessTimeout",
+            "bin/run-server.sh"
+        ],
+        "start:windows" : [
+            "Composer\\Config::disableProcessTimeout",
+            "bin/run-server.bat"
+        ],
+        "start" : [
+            "@start:linux"
+        ],
+        "fix:cs": [
+            "php-cs-fixer fix"
+        ],
+        "test:cs" : [
+            "php-cs-fixer fix --dry-run"
+        ],
+        "test" : [
+            "@test:cs"
+        ]
+    },
+    "scripts-descriptions": {
+        "start" : "Run Web server on Linux",
+        "start:linux" : "Run Web server on Linux",
+        "start:windows" : "Run Web server on Windows",
+        "fix:cs": "Fix PHP code with PHP CS Fixer",
+        "test:cs" : "Test PHP code with PHP CS Fixer",
+        "test" : "Run all tests"
+    }
+}

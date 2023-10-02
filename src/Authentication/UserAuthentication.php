@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Authentication;
 
+use Authentication\Exception\AuthenticationException;
+use Entity\Exception\EntityNotFoundException;
+use Entity\User;
+
 class UserAuthentication
 {
     private const LOGIN_INPUT_NAME = 'login';
@@ -11,7 +15,7 @@ class UserAuthentication
 
     public function loginForm(string $action, string $submitText = 'OK'): string
     {
-        $html= <<<HTML
+        $html = <<<HTML
     <form name="loginForm" action="$action" method="post">
         <div>
             <label for="login">Login :</label>
@@ -22,6 +26,20 @@ class UserAuthentication
         </div>
     </form>
     HTML;
+
         return $html;
+    }
+
+    /**
+     * @throws EntityNotFoundException
+     */
+    public function getUserFromAuth(): User
+    {
+        try {
+            User::findByCredentials($_POST['login'], $_POST['password']);
+        } catch (AuthenticationException) {
+        }
+
+        return User::findByCredentials($_POST['login'], $_POST['password']);
     }
 }

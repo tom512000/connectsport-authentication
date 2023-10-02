@@ -1,8 +1,8 @@
 /* .footer / input.button */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-/* .menu_bloc h2 / .form_bloc h1 */
+/* .menu_bloc h2 / .form_bloc h1 / .insc_bloc h1 */
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-/* .menu_bloc p / label.login / label.password */
+/* .menu_bloc p / label.login / label.password / label.insc */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 
 :root {
@@ -153,8 +153,36 @@ input.button {
     font-family: 'Poppins', sans-serif;
 }
 
+/******************** Inscription (form2.php) ********************/
+.insc_bloc {
+    width: 500px;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: var(--fourth-color);
+}
 
-.country-selector {
-    display: flex;
-    gap: 0.5em;
+.insc_bloc h1 {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: xx-large;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+label.insc {
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+input.insc {
+    width: calc(100% - 6px);
+    height: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    padding-left: 5px;
+    border: 1px solid var(--fifth-color);
+    border-radius: 5px;
 }

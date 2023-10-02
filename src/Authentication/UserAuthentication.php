@@ -43,38 +43,38 @@ class UserAuthentication
 
     public function signForm(string $action, string $submitText = 'OK'): string
     {
-        return "
-        <form name=\"ArtistForm\" action='$action' method='post'>
+        return <<<HTML
+        <form name="{ArtistForm}" action='$action' method='post'>
             <div class='ajout'>
-                <label for='login'>Login :</label>
-                <input type='text' name='login' id='login' placeholder='login' required> 
+                <label class='insc' for='login'>IDENTIFIANT</label><br>
+                <input class="insc" type='text' name='login' id='login' placeholder="Entrez l'identifiant" required> 
             </div>
             <div class='ajout'>
-                <label for='password'>Mot de Passe :</label>
-                <input type='password' name='password' id='password' placeholder='password' required> 
+                <label class='insc' for='password'>MOT DE PASSE</label><br>
+                <input class="insc" type='password' name='password' id='password' placeholder='Entrez le mot de passe' required> 
             </div>
              <div class='ajout'>
-                <label for='firstName'>Prénom :</label>
-                <input type='text' class='firstName' name='firstName' id='firstName' placeholder='Prénom' required>          
+                <label class='insc' for='firstName'>PRENOM</label><br>
+                <input class="insc" type='text' class='firstName' name='firstName' id='firstName' placeholder='Entrez le prénom' required>          
             </div>
             <div class='ajout'>
-                <label for='lastName'>Nom :</label>
-                <input type='text' name='lastName' id='lastName' placeholder='Nom' required> 
+                <label class='insc' for='lastName'>NOM</label><br>
+                <input class="insc" type='text' name='lastName' id='lastName' placeholder='Entrez le nom' required> 
             </div>
             <div class='ajout'>
-                <label for='phone'>Tel :</label>
-                <input type='text' name='phone' id='phone' placeholder='00 00 00 00 00' required> 
+                <label class='insc' for='phone'>NUMERO DE TELEPHONE</label><br>
+                <input class="insc" type='text' name='phone' id='phone' placeholder='Entrez le numéro de téléphone' required> 
             </div>
             <div class='ajout'>
-                <label for='mail'>E-Mail :</label>
-                <input type='text' name='mail' id='mail' placeholder='adresse.mail@exemple.com' required>
+                <label class='insc' for='mail'>E-MAIL</label><br>
+                <input class="insc" type='text' name='mail' id='mail' placeholder="Entrez l'e-mail" required>
             </div>
             <div class='button'>
-                <button type='submit'>Enregistrer</button>
+                <input class="button" type="submit" name="submit" value="S'INSCRIRE">
             </div>
 
         </form>
-        ";
+        HTML;
     }
 
     /**

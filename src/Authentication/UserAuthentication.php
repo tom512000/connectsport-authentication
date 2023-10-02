@@ -19,9 +19,9 @@ class UserAuthentication
     <form name="loginForm" action="$action" method="post">
         <div>
             <label for="login">Login :</label>
-            <input type="text" name="login" value="LOGIN"></br>
+            <input type="text" name="login" placeholder="LOGIN"></br>
             <label for="password">Password :</label>
-            <input type="password" name="password" value="PASSWORD"></br>
+            <input type="password" name="password" placeholder="PASS"></br>
             <input type="submit" name="submit" value="OK">
         </div>
     </form>

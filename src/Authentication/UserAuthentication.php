@@ -18,16 +18,13 @@ class UserAuthentication
     {
         $html = <<<HTML
     <form name="loginForm" action="$action" method="post">
-        <div>
-            <label for="login">Login :</label>
-            <input type="text" name="login" placeholder="LOGIN"></br>
-            <label for="password">Password :</label>
-            <input type="password" name="password" placeholder="PASS"></br>
-            <input type="submit" name="submit" value="OK">
-        </div>
+        <label class="login" for="login">IDENTIFIANT</label><br>
+        <input class="login" type="text" name="login" placeholder="Entrez l'identifiant" required><br>
+        <label class="password" for="password">MOT DE PASSE</label><br>
+        <input class="password" type="password" name="password" placeholder="Entrez le mot de passe" required><br>
+        <input class="button" type="submit" name="submit" value="SE CONNECTER">
     </form>
     HTML;
-
         return $html;
     }
 

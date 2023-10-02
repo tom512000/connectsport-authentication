@@ -118,7 +118,7 @@ class WebPage
     {
         $this->appendToHead(
             <<<HTML
-        \n        {$css}
+        {$css}
 HTML
         );
     }

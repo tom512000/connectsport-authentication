@@ -11,16 +11,13 @@ $authentication = new UserAuthentication();
 $p = new AppWebPage('Authentification');
 
 // Production du formulaire de connexion
-$p->appendCSS(<<<CSS
-    form input {
-        width : 4em ;
-    }
-CSS
-);
 $form = $authentication->loginForm('auth.php');
 $p->appendContent(<<<HTML
-    {$form}
-    <p>Pour faire un test : 105165468818/monmdpdefou
+    <div class="form_bloc">
+        <h1>Connexion</h1>
+        {$form}
+        <p>Exemple : 105165468818 / monmdpdefou</p>
+    </div>
 HTML
 );
 

@@ -1,6 +1,10 @@
 # Authentifier des utilisateurs et simuler un mode connecté
 
 ## Auteur(s)
+- Camille BOURGA (bour0087)
+- Valentin CLADEL (clad0006)
+- Baptiste SIMON (simo0170)
+- Tom SIKORA (siko0001)
 
 ## Installation / Configuration
 

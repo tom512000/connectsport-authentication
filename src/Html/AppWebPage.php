@@ -35,7 +35,7 @@ class AppWebPage extends WebPage
     </head>
     <body>
         <header class="header">
-            <h1 class="header__title">{$this->getTitle()}</h1>
+            <img src="img/logo.png" alt="" class="header__img"/>
         </header>
         <section class="content">
 {$this->getBody()}

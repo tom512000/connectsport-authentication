@@ -1,40 +1,109 @@
-html {
-    height: 100%;
-    background-color: #000;
-    display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); /* .footer */
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap'); /* .menu_bloc h2 */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap'); /* .menu_bloc p */
+
+:root {
+    --main-color: #FFFFFF;
+    --second-color: #FF0000;
+    --third-color: #AD00FF;
 }
+
+* {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    user-select: none;
+    pointer-events: none;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
-    flex: 1;
-    max-width: 900px;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    background-color: #666;
-    color: #ddd;
+    width: 100%;
+    height: 100%;
+    background: url(../img/fond.jpg);
+    background-position: center;
+    background-size: cover;
 }
+
 .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
 }
-.header__title {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0;
-    padding: .5em 1em;
+
+.header__img {
+    height: 90%;
 }
-.footer {
-}
+
 .content {
-    flex: 1;
-    overflow-y: auto;
-    background-color: #333;
-    border-radius: 3px;
-    margin: 0 3px;
-    padding: .5em;
+    display: flex;
+    height: 100%;
+    margin: 25px;
+    border-radius: 20px;
+    background-color: var(--main-color);
 }
+
+.menu_bloc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.menu_bloc h2 {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: xx-large;
+    letter-spacing: 2px;
+}
+
+.ligne {
+    width: 70px;
+    border: 3px solid var(--third-color);
+    border-radius: 10px;
+}
+
+.menu_bloc p {
+    margin-top: 10px;
+    color: black;
+    font-family: 'Nunito', sans-serif;
+}
+
+.menu_bloc a {
+    margin-top: 15px;
+    font-size: 70px;
+}
+
+.menu_bloc a i {
+    width: 100%;
+    height: 100%;
+    color: black;
+}
+
 .country-selector {
     display: flex;
     gap: 0.5em;
 }
 
-a:link, a:visited, a:active {
-    color: white;
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--third-color);
 }

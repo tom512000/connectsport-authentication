@@ -39,17 +39,17 @@ class WebPage
     use StringEscaper;
 
     /**
-     * Texte qui sera compris entre \<head\> et \</head\>.
+     * Texte qui sera compris entre <head> et </head>.
      */
     private string $head = '';
 
     /**
-     * Texte qui sera compris entre \<title\> et \</title\>.
+     * Texte qui sera compris entre <title> et </title>.
      */
     private string $title = '';
 
     /**
-     * Texte qui sera compris entre \<body\> et \</body\>.
+     * Texte qui sera compris entre <body> et </body>.
      */
     private string $body = '';
 
@@ -118,10 +118,7 @@ class WebPage
     {
         $this->appendToHead(
             <<<HTML
-    <style>
-    {$css}
-    </style>
-
+        \n        {$css}
 HTML
         );
     }
@@ -138,7 +135,6 @@ HTML
         $this->appendToHead(
             <<<HTML
     <link rel="stylesheet" href="{$url}">
-
 HTML
         );
     }
@@ -203,10 +199,10 @@ HTML
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{$this->getTitle()}</title>
-{$this->getHead()}
+    {$this->getHead()}
     </head>
     <body>
-{$this->getBody()}
+    {$this->getBody()}
         <div id="lastmodified">Dernière modification : {$lastModification}</div>
     </body>
 </html>

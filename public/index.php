@@ -16,6 +16,10 @@ $webPage->appendContent(
     <ul>
         <li><a href="form.php">Formulaire de connexion</a>
     </ul>
+    <h2>Inscription</h2>
+    <ul>
+        <li><a href="form2.php">Formulaire d'inscription</a></li>
+</ul>
 HTML
 );
 

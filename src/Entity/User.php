@@ -59,8 +59,8 @@ class User
     {
         $stmt = MyPDO::getInstance()->prepare(
             <<<'SQL'
-        SELECT id,login,lastName,firstName,mail,phone,status
-        FROM user
+        SELECT ID,LoginUser,LastName,FirstName,Mail,Phone,Status
+        FROM utilisateur
         WHERE login= ?
         AND sha512pass=SHA2(?,512)
        SQL

@@ -11,12 +11,9 @@ $p = new AppWebPage('Authentification');
 try {
     // Tentative de connexion
     $user = $authentication->getUserFromAuth();
-    if (3 == $user->getStatus()) {
-        header('auth3.php');
-    }
     // Si connexion réussie, affichage du profil
     $p->appendContent(<<<HTML
-    <h1>Mon Profil</h1>
+    <h1>Mon Profil Administrateur</h1>
     <div>Identifiant : {$user->getLogin()}</div>
     <div>Prenom : {$user->getFirstName()}</div>
     <div>Nom : {$user->getLastName()}</div>

@@ -17,7 +17,7 @@ try {
     // Si connexion réussie, affichage du profil
     $p->appendContent(<<<HTML
     <h1>Mon Profil</h1>
-    <div>Identifiant : {$user->getLogin()}</div>
+    <div>Identifiant : {$user->getLoginUser()}</div>
     <div>Prenom : {$user->getFirstName()}</div>
     <div>Nom : {$user->getLastName()}</div>
     <div>Numero de Telephone : {$user->getPhone()}</div>

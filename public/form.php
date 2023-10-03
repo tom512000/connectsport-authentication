@@ -16,7 +16,7 @@ $p->appendContent(<<<HTML
     <div class="form_bloc">
         <h1>Connexion</h1>
         {$form}
-        <p>Exemple : 105165468818 / monmdpdefou</p>
+        <p>Exemple : guesso01 / monmdpdefou</p>
     </div>
 HTML
 );

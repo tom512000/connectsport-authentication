@@ -12,7 +12,7 @@ class User
     private int $id;
     private string $firstName;
     private string $lastName;
-    private string $login;
+    private string $loginUser;
     private string $mail;
     private string $phone;
     private int $status;
@@ -32,17 +32,17 @@ class User
         return $this->lastName;
     }
 
-    public function getLogin(): string
+    public function getLoginUser(): string
     {
-        return $this->login;
+        return $this->loginUser;
     }
 
-    public function getMail(): string
+    public function getMail(): ?string
     {
         return $this->mail;
     }
 
-    public function getPhone(): string
+    public function getPhone(): ?string
     {
         return $this->phone;
     }
@@ -59,9 +59,9 @@ class User
     {
         $stmt = MyPDO::getInstance()->prepare(
             <<<'SQL'
-        SELECT ID,LoginUser,LastName,FirstName,Mail,Phone,Status
-        FROM utilisateur
-        WHERE login= ?
+        SELECT ID_user,lastName,firstName,loginUser,mail,phone,status
+        FROM Utilisateur
+        WHERE loginUser= ?
         AND sha512pass=SHA2(?,512)
        SQL
         );

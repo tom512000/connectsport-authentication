@@ -10,7 +10,10 @@ use Html\UserProfile;
 
 $p = new AppWebPage('Test rapide des classes User et UserProfile');
 
-$user1 = User::findByCredentials('essai', 'toto');
+try {
+    $user1 = User::findByCredentials('guesso01', 'monmdpdefou');
+} catch (EntityNotFoundException $e) {
+}
 
 $p->appendContent(Dumper::dump($user1));
 

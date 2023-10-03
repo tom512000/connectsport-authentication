@@ -30,7 +30,7 @@ class UserProfile
         $html = <<<HTML
             <a>Nom : {$this->user->getFirstName()}</a>
             <a>Prenom : {$this->user->getLastName()}</a>
-            <a>Login : {$this->user->getLogin()}</a>
+            <a>Login : {$this->user->getLoginUser()}</a>
             <a>Mail : {$this->user->getMail()}</a>
             <a>Telephone : {$this->user->getPhone()}</a>
         HTML;

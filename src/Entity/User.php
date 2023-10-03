@@ -15,6 +15,7 @@ class User
     private string $login;
     private string $mail;
     private string $phone;
+    private int $status;
 
     public function getId(): int
     {
@@ -46,6 +47,11 @@ class User
         return $this->phone;
     }
 
+    public function getStatus(): int
+    {
+        return $this->status;
+    }
+
     /**
      * @throws EntityNotFoundException
      */
@@ -53,7 +59,7 @@ class User
     {
         $stmt = MyPDO::getInstance()->prepare(
             <<<'SQL'
-        SELECT id,login,lastName,firstName,mail,phone
+        SELECT id,login,lastName,firstName,mail,phone,status
         FROM user
         WHERE login= ?
         AND sha512pass=SHA2(?,512)

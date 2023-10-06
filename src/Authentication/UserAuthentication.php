@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Authentication;
 
-use Authentication\Exception\AuthenticationException;
 use Authentication\Exception\ParameterException;
 use Entity\Exception\EntityNotFoundException;
 use Entity\User;
@@ -16,7 +15,7 @@ class UserAuthentication
 
     public function loginForm(string $action, string $submitText = 'OK'): string
     {
-        $html = <<<HTML
+        return <<<HTML
     <form name="loginForm" action="$action" method="post">
         <label class="login" for="login">IDENTIFIANT</label><br>
         <input class="login" type="text" name="login" placeholder="Entrez l'identifiant" required><br>
@@ -25,7 +24,6 @@ class UserAuthentication
         <input class="button" type="submit" name="submit" value="SE CONNECTER">
     </form>
     HTML;
-        return $html;
     }
 
     /**
@@ -35,7 +33,7 @@ class UserAuthentication
     {
         try {
             User::findByCredentials($_POST['login'], $_POST['password']);
-        } catch (AuthenticationException) {
+        } catch (EntityNotFoundException) {
         }
 
         return User::findByCredentials($_POST['login'], $_POST['password']);
@@ -81,11 +79,6 @@ class UserAuthentication
      */
     public function setEntityFromQueryString(): void
     {
-        if (ctype_digit(intval($_POST['id']))) {
-            $id = intval($_POST['id']);
-        } else {
-            $id = null;
-        }
         if ('' == $_POST['login'] or '' == $_POST['password'] or '' == $_POST['firstName'] or '' == $_POST['lastName'] or '' == $_POST['phone'] or '' == $_POST['mail']) {
             throw new ParameterException('Paramètre invalide');
         }
@@ -95,6 +88,6 @@ class UserAuthentication
         $lastName = $_POST['lastName'];
         $phone = $_POST['phone'];
         $mail = $_POST['mail'];
-        User::create($login, $password, $firstName, $lastName, $phone, $mail, $id);
+        User::create($login, $password, $firstName, $lastName, $phone, $mail);
     }
 }

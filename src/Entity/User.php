@@ -73,4 +73,16 @@ class User
             return $user;
         }
     }
+
+    public static function create($login, $password, $firstName, $lastName, $phone, $mail): void
+    {
+        $stmt = MyPDO::getInstance()->prepare(
+            <<<'SQL'
+        INSERT INTO Utilisateur(lastName,firstName,loginUser,sha512pass,phone,mail)
+        VALUES(?,?,?,SHA2(?,512),?,?)
+       SQL
+        );
+        $stmt->setFetchMode(MyPDO::FETCH_CLASS, User::class);
+        $stmt->execute([$lastName, $firstName, $login, $password, $phone, $mail]);
+    }
 }

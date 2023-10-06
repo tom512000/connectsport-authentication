@@ -59,13 +59,21 @@ if ($_POST) {
     session_start();
     $p->appendContent(
         <<<HTML
-        <h1>Mon Profil</h1>
-        <div>Identifiant : {$_SESSION['login']}</div>
-        <div>Prenom : {$_SESSION['lastName']}</div>
-        <div>Nom : {$_SESSION['firstName']}</div>
-        <div>Numero de Telephone : {$_SESSION['phone']}</div>
-        <div>E-Mail : {$_SESSION['mail']}</div>
-        <div>Statut : {$_SESSION['status']}</div>
+        <div class="profile">
+            <h1>Mon Profil</h1>
+            <p class="title">IDENTIFIANT</p>
+            <p class="respo">{$_SESSION['login']}</p>
+            <p class="title">PRENOM</p>
+            <p class="respo">{$_SESSION['firstName']}</p>
+            <p class="title">NOM</p>
+            <p class="respo">{$_SESSION['lastName']}</p>
+            <p class="title">NUMERO DE TELEPHONE</p>
+            <p class="respo">{$_SESSION['phone']}</p>
+            <p class="title">E-MAIL</p>
+            <p class="respo">{$_SESSION['mail']}</p>
+            <p class="title">STATUT</p>
+            <p class="respo">{$_SESSION['status']}</p>
+        </div>
         HTML
     );
 }

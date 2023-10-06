@@ -72,7 +72,6 @@ class UserAuthentication
             <div class='button'>
                 <input class="button" type="submit" name="submit" value="S'INSCRIRE">
             </div>
-
         </form>
         HTML;
     }

@@ -8,23 +8,33 @@ use Html\AppWebPage;
 use Html\Helper\Dumper;
 use Html\UserProfile;
 
-$p = new AppWebPage('Test rapide des classes User et UserProfile');
+$p = new AppWebPage('Test (User et UserProfile)');
 
 try {
     $user1 = User::findByCredentials('guesso01', 'monmdpdefou');
 } catch (EntityNotFoundException $e) {
 }
 
-$p->appendContent(Dumper::dump($user1));
+$p->appendContent(
+    <<<HTML
+    <div class="test">
+        <h1>Test</h1>
+    HTML
+);
 
-$user1Profile = new UserProfile($user1);
-$p->appendContent($user1Profile->toHTML());
+$p->appendContent(Dumper::dump($user1));
 
 try {
     User::findByCredentials('NOT-ESSAI', 'TOTO');
-    $p->appendContent('<div style="color:red;">EntityNotFoundException?</div>');
+    $p->appendContent('<p>Utilisateur introuvable (EntityNotFoundException) : <span style="color:red;">BAD!</span></p>');
 } catch (EntityNotFoundException) {
-    $p->appendContent('<div>User `NOT-ESSAI` not found: <span style="color:green;">great!</span></div>');
+    $p->appendContent('<p>Utilisateur `NOT-ESSAI` introuvable : <span style="color:green;">GOOD!</span></p>');
 }
+
+$p->appendContent(
+    <<<HTML
+        </div>
+    HTML
+);
 
 echo $p->toHTML();

@@ -12,7 +12,8 @@ $webpage = new AppWebPage('Inscription');
 
 // Production du formulaire de connexion
 $form = $authentication->signForm('user-save.php');
-$webpage->appendContent(<<<HTML
+$webpage->appendContent(
+    <<<HTML
     <div class="insc_bloc">
         <h1>INSCRIPTION</h1>
         {$form}

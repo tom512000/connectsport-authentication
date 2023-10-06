@@ -1,8 +1,11 @@
 /* .footer / input.button */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-/* .menu_bloc h2 / .form_bloc h1 / .insc_bloc h1 */
+/* .menu_bloc h2 / .form_bloc h1 / .insc_bloc h1 /
+    .profile h1 / .error h1 / .error h1 / .test h1 */
 @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-/* .menu_bloc p / label.login / label.password / label.insc */
+/* .menu_bloc p / label.login / label.password /
+    label.insc / .profile p / .profile p.respo /
+    .error p */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 
 :root {
@@ -36,8 +39,7 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background: url(../img/fond.jpg);
-    background-position: center;
+    background: url(../img/fond.jpg) center;
     background-size: cover;
 }
 
@@ -185,4 +187,107 @@ input.insc {
     padding-left: 5px;
     border: 1px solid var(--fifth-color);
     border-radius: 5px;
+}
+
+/********************* Mon profile (auth.php) *********************/
+.profile {
+    width: 500px;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: var(--fourth-color);
+}
+
+.profile h1 {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: xx-large;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.profile p.title {
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+.profile p.respo {
+    width: calc(100% - 6px);
+    height: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    padding-left: 5px;
+    border: 1px solid var(--fifth-color);
+    border-radius: 5px;
+    color: var(--fourth-color);
+    background-color: var(--fifth-color);
+    font-family: 'Nunito', sans-serif;
+    font-size: 21px;
+}
+
+/******************* Pages d'erreur (auth.php) *******************/
+.error {
+    width: 500px;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: var(--fourth-color);
+}
+
+.error h1 {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: xx-large;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.error p {
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.error code {
+    padding: 4px;
+    color: var(--fourth-color);
+    background-color: var(--fifth-color);
+    border-radius: 5px;
+}
+
+/********************* Test (test-user.php) *********************/
+.test {
+    width: 500px;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: var(--fourth-color);
+}
+
+.test h1 {
+    font-family: 'Dela Gothic One', cursive;
+    font-size: xx-large;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.test pre {
+    padding: 4px;
+    color: var(--fourth-color);
+    background-color: var(--fifth-color);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.test p {
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    margin-bottom: 5px;
 }

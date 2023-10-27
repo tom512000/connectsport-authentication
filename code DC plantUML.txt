@@ -1,0 +1,112 @@
+@startuml
+skinparam DefaultFontSize 15
+skinparam Shadowing false
+skinparam BackgroundColor transparent
+
+skinparam Padding 6
+skinparam nodesep 100
+
+skinparam ClassAttributeIconSize 0
+skinparam ClassAttributeFontColor FFF
+skinparam ClassFontColor FFF
+skinparam FontColor EEE
+skinparam ClassBackgroundColor 333
+skinparam ClassBorderColor black
+skinparam ClassBorderThickness 2
+skinparam ClassStereotypeFontColor 999
+
+
+skinparam PackageBackgroundColor BBB
+skinparam PackageBorderColor 666
+
+
+
+class User{
+    - id : int 
+    - firstName : string
+    - lastName : string
+    - loginUser : string
+    - mail : string
+    - phone : string
+    - status : string
+    
+    + int getId()
+    + string getFirstName()
+    + string getLastName()
+    + string getLoginUser()
+    + string getMail()
+    + string getPhone()
+    + int getStatus()
+    + {static} UserAuth findByCredentials(string, string)
+    + {static} void create(string, string, string, string, string, string)
+}
+
+class UserAdmin extends User{
+   + void consulterStats()
+   + void validerInscriptions(User)
+   + void ajouterUser(User)
+   + void supprimerUser(User)
+   + void definirCoach(User)
+}
+
+class UserProfile{
+    - user : User
+    
+    + User getUser()
+    + string toHtml()  
+}
+
+class UserAuthentication{
+   - string LOGIN_INPUT_NAME = 'login' {readOnly}
+   - string PASSWORD_INPUT_NAME = 'password' {readOnly}
+   
+   + string loginForm(string, string)
+   + User getUserFromAuth()
+   + string signForm(string, string)
+   + void setEntityFromQueryString()
+}
+
+class AuthenticationException extends Exception{
+
+}
+
+class ParameterException extends Exception{
+
+}
+
+class EntityNotFoundException extends Exception{
+
+}
+
+class Compte{
+   - UserAuthentication auth
+   - Array listeInscriptionActivite
+   - Array listeContacts
+
+   + void ajouterContact(User)
+   + void supprimerContact(User)
+   + bool isAdmin(User)
+}
+class Activite{
+   - int idAct
+   - string libelle
+   - date date
+   - string heureDebut
+   - int dureeMinutes
+   - array coordLieu
+   - string description
+
+   + void inscrireActivite(User)
+   + void desinscrireActivite(User)
+}
+
+Class Exception{
+}
+
+
+User "many" --> "many" Activite : participer
+User "1" -- "1" Compte : Posseder >
+UserAuthentication "1" -- "1" Compte : Comporter <
+UserProfile "1" --> "1" User
+User "1" -- "1" User : Communiquer
+@enduml
